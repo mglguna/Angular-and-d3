@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Oreilly Book Details</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+        <script src="myapp.js"></script>
+    </head>
+    <body ng-app="demoApp" ng-controller="MainController">
+        <select>
+            <option name="Books">Books</option>
+            <option name="Conference">Conference</option>
+            <option name="Courses">Courses</option>
+        </select>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Subtitle</th>
+                    <th>Author</th>
+                    <th>Publisher</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                </tr>    
+            </thead>
+            <tbody>
+                <tr ng-repeat="d in mydata">
+                    <th>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

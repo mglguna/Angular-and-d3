@@ -1,0 +1,48 @@
+{
+ "name": "tree-votes",
+ "children": [
+    {
+     "name": "Employers  (Classic)",
+     "children": [
+{"name":"Premium Statement", "colorgrp":"royalblue" , "roc2":0.006, "roc3":-0.82, "pop100k":46273, "size":55},
+{"name":"EE Add", "colorgrp":"royalblue" , "roc2":0.008, "roc3":-0.82, "pop100k":15386, "size":55},
+{"name":"EE Changes", "colorgrp":"royalblue" , "roc2":0.003, "roc3":-0.82, "pop100k":39159, "size":55},
+{"name":"MY Forms", "colorgrp":"royalblue" , "roc2":0.014, "roc3":-0.82, "pop100k":5349, "size":55},
+{"name":"E of I Reporting", "colorgrp":"royalblue" , "roc2":0.026, "roc3":-0.82, "pop100k":5426, "size":55},
+{"name":"ER Claims Status", "colorgrp":"royalblue" , "roc2":0.047, "roc3":-0.82, "pop100k":3409, "size":55},
+{"name":"Tax Reporting", "colorgrp":"royalblue" , "roc2":0.029, "roc3":-0.82, "pop100k":1423, "size":55}
+     ]
+    },
+    {
+     "name": "Employers  (Simply Unum)",
+     "children": [
+{"name":"Statement Summary", "colorgrp":"lawngreen" , "roc2":0.014, "roc3":-0.82, "pop100k":19695, "size":55},
+{"name":"EE Add", "colorgrp":"lawngreen" , "roc2":0.03, "roc3":-0.82, "pop100k":5728, "size":55},
+{"name":"EE Change", "colorgrp":"lawngreen" , "roc2":0.027, "roc3":-0.82, "pop100k":14174, "size":55},
+{"name":"Case Setup", "colorgrp":"lawngreen" , "roc2":0, "roc3":-0.82, "pop100k":475, "size":55},
+{"name":"Plan Documents", "colorgrp":"lawngreen" , "roc2":0, "roc3":-0.82, "pop100k":1473, "size":55},
+{"name":"ER Claim Status", "colorgrp":"lawngreen" , "roc2":0.022, "roc3":-0.82, "pop100k":2276, "size":55}
+    ]
+    },
+    {
+     "name": "Sales Partners",
+     "children": [
+{"name":"IIP App Status", "colorgrp":"crimson" , "roc2":0.005, "roc3":-0.82, "pop100k":4038, "size":55},
+{"name":"E-Statements", "colorgrp":"crimson" , "roc2":0.016, "roc3":-0.82, "pop100k":13017, "size":55},
+{"name":"SPR Forms Wizard", "colorgrp":"crimson" , "roc2":0, "roc3":-0.82, "pop100k":2551, "size":55},
+{"name":"Multi Life Add- on", "colorgrp":"crimson" , "roc2":0, "roc3":-0.82, "pop100k":258, "size":55}
+    ]
+    },
+    {
+     "name": "Claimant",
+     "children": [
+{"name":"Claim Status", "colorgrp":"orange" , "roc2":0.011, "roc3":-0.82, "pop100k":65519, "size":55},
+{"name":"Payment", "colorgrp":"orange" , "roc2":0.003, "roc3":-0.82, "pop100k":24142, "size":55},
+{"name":"File a Claim", "colorgrp":"orange" , "roc2":0.016, "roc3":-0.82, "pop100k":6863, "size":55},
+{"name":"Items Missing from Form", "colorgrp":"orange" , "roc2":0.015, "roc3":-0.82, "pop100k":9493, "size":55},
+{"name":"Info Requested", "colorgrp":"orange" , "roc2":0.001, "roc3":-0.82, "pop100k":13135, "size":55},
+{"name":"Policy Documents", "colorgrp":"orange" , "roc2":0.003, "roc3":-0.82, "pop100k":7372, "size":55}
+     ]
+    }
+ ]
+}

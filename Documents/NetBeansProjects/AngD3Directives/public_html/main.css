@@ -1,0 +1,11 @@
+.arc1:hover{
+    fill:lightgreen;    
+}
+.arcText:hover{
+    fill:grey;
+    font-size:30px;   
+}
+#text{
+    fill:black;
+    background:yellow;
+}

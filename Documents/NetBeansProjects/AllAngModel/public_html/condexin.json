@@ -1,0 +1,36 @@
+{
+    "name": "Top Node",
+    "children": [
+      {
+        "name": "Bob",
+        "parent": "Top Node",
+        "children": [
+          {
+            "name": "Bob's Son",
+            "parent": "Bob: Child of Top Node"
+          },
+          {
+            "name": "Bob's Daughter",
+            "parent": "Bob: Child of Top Node"
+          }
+        ]
+      },
+      {
+        "name": "Sally",
+        "parent": "Top Node",
+        "children": [
+          {
+            "name": "Sally's Son",
+            "parent": "Bob: Child of Top Node"
+          },
+          {
+            "name": "Sally's Daughter",
+            "parent": "Bob: Child of Top Node"
+          }
+        ]
+      },
+      {
+          "name":"Mr.X"
+      }
+    ]
+  }

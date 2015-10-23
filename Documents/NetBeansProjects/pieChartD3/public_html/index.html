@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>D3 PieChart</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://d3js.org/d3.v3.js"></script>
+    </head>
+    <style>
+        .axis path
+        .axis line{
+            fill:none;
+            stroke:#000;
+            shape-rendering:crispEdges;
+        }
+        .x.axis path{
+            display:none;
+        }
+        .line{
+            fill:none;
+            stroke:steelblue;
+            stroke-width:1.5px;
+        }
+        .bar{
+            fill:blue;            
+        }
+    </style>
+    <body>
+        <script>
+            var canvas=d3.select("body").append("svg")
+                    .attr("width",500)
+                    .attr("height",960);                    
+            var color=d3.scale.category10();
+            d3.json('myData.json',function(data){
+                
+            var treemap=d3.layout.treemap()
+                    .size([400,400])
+                    .nodes(data);
+            console.log(treemap);
+            var cells=canvas.selectAll(".cell")
+                    .data(treemap)
+                    .enter()
+                    .append("g")
+                    .attr("class","cell");
+            cells.append("rect")
+                    .attr("x",function(d){return d.x;})
+                    .attr("y",function(d){return d.y;})
+                    .attr("width",function(d){return d.dx;})
+                    .attr("height",function(d){return d.dy;})
+                    .attr("fill",function(d){return d.children?null:color(d.parent.name);})
+                    .attr("stroke","white");
+            cells.append("text")
+                    .attr("x",function(d){return d.x+d.dx/2;})
+                    .attr("y",function(d){return d.y+d.dy/2;})
+                    .attr("text-anchor","middle")
+                    .text(function(d){return d.children?null:d.name;});
+             });
+           /* var canvas=d3.select("body").append("svg")
+                    .attr("width",500)
+                    .attr("height",960)
+                    .append("g")
+                    .attr("transform","translate(50,50)");
+            var tree=d3.layout.tree()
+                    .size([400,400]);
+            d3.json('condexin.json',function(data){
+                var nodes=tree.nodes(data);
+                var link=tree.links(nodes);
+                           
+            var diagonal=d3.svg.diagonal()
+                    .projection(function(d){return [d.y,d.x]});
+            var node=canvas.selectAll(".node")
+                    .data(nodes)
+                    .enter()
+                    .append("g")
+                    .attr("class","node")
+                    .attr("transform",function(d){return "translate("+d.y+","+d.x+")";});                    
+                   node.append("circle")
+                           .attr("r",3)
+                           .attr("fill","purple");
+                   node.append("text")
+                           .text(function(d){return d.name;});
+                   canvas.selectAll(".link")
+                           .data(link)
+                           .enter()
+                           .append("path")
+                           .attr("fill","none")
+                           .attr("stroke","blue")
+                           .attr("stroke-width","2px")
+                           .attr("d",diagonal);
+            }); 
+            
+           /* var barPadding=0.1;
+            var margin={left:30,bottom:30,right:30,top:30};
+            h=500-margin.top-margin.bottom;
+            w=960-margin.left-margin.right;
+            
+            var canvas=d3.select("body").append("svg")
+                    .attr("height",h+margin.top+margin.bottom)
+                    .attr("width",w+margin.left+margin.right)
+                    .append("g")
+                    .attr("tranform","translate("+margin.left+","+margin.top+")");
+            d3.csv('bardata.csv',type,function(data){
+               
+                var xScale=d3.scale.ordinal()
+                        .domain(data.map(function(d){return d.letter;}))
+                        .rangeBands([margin.left,w],barPadding);
+                var yScale=d3.scale.linear()
+                        .domain([0,d3.max(data,function(d){return d.frequency;})])
+                        .range([h,0]);
+                var xAxis=d3.svg.axis()
+                        .scale(xScale)
+                        .orient("bottom");
+                var yAxis=d3.svg.axis()
+                        .scale(yScale)
+                        .orient("left")
+                        .ticks(10,"%");
+                canvas.append("g")
+                        .attr("class","axis")
+                        .call(xAxis)
+                        .attr("transform","translate(0,"+h+")");
+                canvas.append("g")
+                        .attr("class","axis")
+                        .call(yAxis)
+                        .attr("transform","rotate(-90)")                        
+                        .append("text")                        
+                        .attr("y",6)
+                        .text("Frequency")
+                        .attr("text-anchor","middle");
+                canvas.selectAll(".bar")
+                        .data(data)
+                        .enter()
+                        .append("rect")
+                        .attr("class","bar")
+                        .attr("x",function(d){return xScale(d.letter);})
+                        .attr("y",function(d){return yScale(d.frequency);})
+                        .attr("width",xScale.rangeBand())
+                        .attr("height",function(d){return h-yScale(d.frequency);});
+            });
+            function type(d){
+                d.frequency=+d.frequency;
+                return d;                
+            }
+          /*  var h=700,w=700,padding=30;
+            var parseDate=d3.time.format("%d-%b-%y").parse;
+            var canvas=d3.select("body").append("svg")
+                    .attr("height",h)
+                    .attr("width",w)
+                    .append("g")
+                    .attr("transform","translate(50,50)");            
+            d3.csv('data.csv',function(data){                
+                   data.forEach(function(d){
+                       d.date=parseDate(d.date);
+                       d.close=+d.close;
+                   });
+               var xScale=d3.time.scale()
+                    .domain(d3.extent(data,function(d){return d.date;}))
+                    .range([padding,w-padding*2]);
+               var yScale=d3.scale.linear()
+                   .domain(d3.extent(data,function(d){return d.close;}))
+                    .range([h-padding,padding]);            
+               var xAxis=d3.svg.axis()
+                       .scale(xScale)
+                       .orient("bottom");
+                       
+                var yAxis=d3.svg.axis()
+                        .scale(yScale)
+                        .orient("left");
+                        
+                var line=d3.svg.line()
+                        .x(function(d){return xScale(d.date);})
+                        .y(function(d){return yScale(d.close);});
+                canvas.append("g")
+                        .attr("class","axis")
+                        .attr("tranform","translate(0,"+h+")")
+                        .call(xAxis);
+                canvas.append("g")
+                        .attr("class","axis")
+                        .attr("tranform","rotate(-90)")
+                        .call(yAxis);
+
+                canvas.append("path")
+                     // .datum(data)
+                      .attr("class","line")
+                      .attr("d",line(data));
+            });         
+            
+           /* var i=0;
+             var canvas=d3.select("body").append("svg")
+                         .attr("height",960)
+                         .attr("width",500)
+                         .append("g")
+                        .attr("transform","translate(50,50)");
+                var tree=d3.layout.tree()
+                        .size([400,400]);
+                d3.json('condexin.json',function(data){
+                    var nodes=tree.nodes(data);
+                    console.log(nodes);
+                    var links=tree.links(nodes);
+                    
+                    var node=canvas.selectAll(".node")
+                            .data(nodes)
+                            .enter()
+                            .append("g")
+                            .attr("class","node")
+                            .attr("transform",function(d){return "translate("+d.y+","+d.x+")";});                            
+                    node.append("circle")
+                            .attr("r",5)
+                            .attr("fill","blue");
+                    node.append("text").text(function(d){return d.name;});
+                    var diagonal=d3.svg.diagonal()
+                            .projection(function(d){return [d.y,d.x];});                            
+                    canvas.selectAll(".link")
+                            .data(links)
+                            .enter()
+                            .append("path")
+                            .attr("class","link")
+                            .attr("fill","none")
+                            .attr("stroke","blue")
+                            .attr("d",diagonal);                            
+                });
+                
+               
+                
+               /* var color = d3.scale.ordinal()
+                    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+                var arc=d3.svg.arc()
+                        .innerRadius(0)
+                        .outerRadius(250);
+                var pie=d3.layout.pie()
+                        .sort(null)
+                            .value(function(d){return d.population;});
+               d3.csv("piechart.csv",function(data){                       
+                var arcs=canvas.selectAll(".arc")
+                            .data(pie(data))
+                            .enter()
+                            .append("g")
+                            .attr("class","arc");
+                    arcs.append("path")
+                            .attr("d",arc)
+                            .attr("fill",function(d){return color(d.data.population);});
+                    arcs.append("text")
+                            .attr("transform",function(d){return "translate("+arc.centroid(d)+")"})
+                            .attr("dy",".35em")
+                            .style("text-anchor","middle")
+                            .text(function(d){return d.data.age;});
+               });*/
+        </script>    
+    </body>
+</html>

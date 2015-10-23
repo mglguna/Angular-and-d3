@@ -1,0 +1,35 @@
+ <div class="panel panel-default bookContents" ng-controller="BookController">
+        <div class="panel-body col-md-12" style="border:1px solid #F5F5F5;">
+            <div>   
+            <div class="col-md-6 bookcontentImage">
+                <img ng-src="{{imgURL}}" alt="bookImages" height="450" width="400">
+                <!--class="selectedBookImage img-responsive"-->
+            </div> 
+            <div class="col-md-6 bookToggle">
+                <div class="panel panel-default">
+                    <div class="panel-heading bookDetailsToggle" style="padding:0px;">                        
+                        <button type="button" class="btn btn-link col-md-6 bookDetailsTab" ng-click="dispDetailDesc()">Book Details</button>
+                        <button type="button" class="btn btn-link col-md-6 bookDescTab" ng-click="dispDetailDesc()">Book Description</button>
+                    </div>
+                    <div class="panel-body" ng-show="edit"><br><br>
+                        <h4 style="text-decoration:underline">{{title}}</h4>
+                        <h6 style="font-style:italic">{{subtitle}}</h6>
+                        <ol class="bookDetailsList">
+                            <li class="bookDetailsulli"><strong>Author:</strong>{{author}}</li><br>
+                            <li class="bookDetailsulli"><strong>Publisher:</strong>{{publisher}}</li><br>
+                            <li class="bookDetailsulli"><strong>Price:</strong>{{price}}</li><br>
+                        </ol>
+                      </div> 
+                    <div class="panel-body" ng-hide="edit">
+                        <br><br><p class="bookDescDetail" style="text-indent:5px;text-align:justify;">{{description}}</p>
+                    </div>
+                    </div>
+            </div><br><br>
+                <div class="remainingBooks col-md-12" style="border:1px solid #F5F5F5">
+                    <ol class="remBookList">
+                        <li ng-repeat="book in books" class="imgulli"><img ng-src="{{book['Image URL']}}" alt="Remaining Books" height="120" width="100" ng-click="changeBook(book)"></li>
+                    </ol>
+                </div>
+                </div>
+            </div>
+        </div>  

@@ -1,0 +1,56 @@
+/* global responsive */
+
+/* global img */
+
+<div class="booksAndEvents" ng-controller="MainController">
+	<div id="myCarousel" class="col-md-12 carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-targer="#myCarousel" data-slide-to="1"></li>
+			<li data-target="#myCarousel" data-slide-t0="2"></li>
+		</ol>
+		<div class="col-md-12 carousel-inner" role="listbox">
+			<div class="item active">
+				<img ng-src="https://image-store.slidesharecdn.com/147e0d91-f356-4c54-8b07-473e99ad61ec-medium.jpeg" alt="Conference Images" height="350" width="100%" ng-class="img-responsive">
+			</div>
+			<div class="item">
+				<img ng-src="http://cdn.oreillystatic.com/oreilly/promos/ba-solid-20141202.png" alt="conference Images" height="350" width="100%" ng-class="img-responsive">
+			</div>
+			<div class="item">
+				<img ng-src="http://cdn.oreillystatic.com/oreilly/promos/ba-velocity-sc-20150316.png" alt="conference Images" height="350" width="100%" ng-class="img-responsive">
+			</div>
+		</div>
+	</div>
+	<div>
+		<div class="panel panel-default panelpart1 col-md-5" style="margin:10px;">
+			<div class="panel panel-heading">Upcoming Events and Courses</div>
+			<div class="panel panel-body" style="padding:0px">
+				<div class="panelheader">
+					<h3 class="col-md-2">talen<span style="color:#00FF00">d<sup>*</sup></span></h3>
+					<p class="col-md-10"><a href=# style="text-decoration:underline;">Introduction to Talend</a><br>Presented by:Anteneh Benti</p>
+				</div><br>
+				<h5>Other upcoming Events</h5><br>
+				<div class="panelulli">
+					<ul>
+						<li><a href=#>Introduction to Tableau</a></li>
+						<li><a href=#>Big Data Conference</a></li>
+						<li><a href=#>Hadoop summit</a></li>
+						<li><a href=#>Tableau Conference</a></li>
+						<li><a href=#>Advanced SOA Training</a></li>
+						<li><a href=#>Oracle E-Business suite Training</a></li>				
+					</ul>
+				</div><br>	
+				<p><a href="#">All online Events and Courses<span class="glyphicon glyphicon-chevron-right"></span></a></p>
+			</div>
+		</div>
+		<div class="panel panel-default col-md-5 bookpanel" style="margin:10px;">
+			<div class="panel panel-heading">Newest Books</div>
+                        <div class="panel panel-body">
+                            <ol class="bookpanelbody">
+                                <li ng-repeat="data in myData.Books" ng-style="{'list-style-type':'none','display':'inline-block','padding':'6px'}"><img ng-src="{{data['Image URL']}}" alt="Book Images" height="111" width="80" ng-click="bookDisp(data)" ng-class="img-responsive"></li>
+                            </ol>
+                            
+                        </div>
+		</div>
+	</div> 
+        </div>

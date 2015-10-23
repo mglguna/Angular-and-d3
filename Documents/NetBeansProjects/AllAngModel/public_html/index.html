@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.js"></script> 
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.js"></script>	
+        <script src="http://d3js.org/d3.v3.js"></script>
+        <script src="main.js"></script> 
+    </head>
+    <body ng-app="myApp" ng-controller="myCtrl">
+        <h1 style="color:{{myColor}}">{{name}}</h1>
+        <treechart></treechart>
+	<a href="#/">View1</a>|
+	<a href="#/view2">View2</a>        
+	<div ng-view></div>
+    </body>
+</html>

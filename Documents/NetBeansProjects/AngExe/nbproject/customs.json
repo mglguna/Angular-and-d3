@@ -1,0 +1,11 @@
+{
+    "attributes": {
+        "mydirect": {
+            "context": "div"
+        }
+    },
+    "elements": {
+        "my-direct": {},
+        "myDirect": {}
+    }
+}

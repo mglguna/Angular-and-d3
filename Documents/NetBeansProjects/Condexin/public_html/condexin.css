@@ -1,0 +1,50 @@
+.headername{
+	height:100%;
+	float:left;
+	padding-top:30px;
+	padding-bottom:0px;
+}
+.headerimg{
+	height:100px;
+	margin:0px;
+	float:right;
+	
+}
+.navulli>ul li{
+	border:5px solid #F5F5F5;
+	color:black;
+	font-size:20px;
+	padding-right:10px;
+}
+.navform{
+	padding-top:8px;
+	padding-left:110px;
+	padding-right:0px;
+}
+.panelulli>ul li{
+	text-decoration:underline;
+}
+.panelheader{
+	height:30px;
+}
+.panelheader >h3{
+	margin:0px;
+}
+.panelpart1 {
+	padding:0px;
+	margin:0px;
+	clear:both;
+}
+.bookpanel{
+	float:right;
+	padding:0px;
+	margin:0px;
+}
+.imgulli{
+    list-style-type: none;
+    display:inline-block;
+    padding:6px;
+}
+.bookDetailsTab,.bookDescTab{
+    border-bottom:2px solid #EDEDE9;
+}

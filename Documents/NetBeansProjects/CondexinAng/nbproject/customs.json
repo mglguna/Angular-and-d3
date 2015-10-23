@@ -1,0 +1,10 @@
+{
+    "attributes": {
+        "ngview": {
+            "context": "div"
+        }
+    },
+    "elements": {
+        "ngview": {}
+    }
+}

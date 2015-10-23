@@ -1,0 +1,22 @@
+<table class="table table-striped col-md-12">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Dates</th>
+            <th>Instructor</th>
+            <th>Course Descriptions</th>
+            <th>Prerequisites</th>
+            <th>Class Registration Link</th>
+        </tr>    
+    </thead>
+    <tbody>
+        <tr ng-repeat="d in mydata.Courses">
+            <td>{{d.Name}}</td>
+            <td>{{d.Dates}}</td>
+            <td>{{d.Instructor}}</td>
+            <td>{{d['Course Descriptions']}}</td>
+            <td>{{d.Prerequisites}}</td>
+            <td><a href="{{d['Class Registration Link']}}">Click me to Register!!!</a></td>
+        </tr>
+    </tbody>
+</table>

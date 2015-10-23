@@ -1,0 +1,22 @@
+<table class="table table-striped col-md-12">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Subtitle</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>    
+    </thead>
+    <tbody>
+        <tr ng-repeat="d in mydata.Books">
+            <td>{{d.Title}}</td>
+            <td>{{d.Subtitle}}</td>
+            <td>{{d.Author}}</td>
+            <td>{{d.Publisher}}</td>
+            <td>{{d.Price}}</td>
+            <td><img ng-src="{{d['Image URL']}}" alt="Books Images" height=30 width=30></td>
+        </tr>
+    </tbody>
+</table>

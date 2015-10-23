@@ -1,0 +1,20 @@
+<table class="table table-striped col-md-12">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>When</th>
+            <th>Event Website</th>
+            <th>Event Image</th>
+        </tr>    
+    </thead>
+    <tbody>
+        <tr ng-repeat="d in mydata.Conferences">
+            <td>{{d.Name}}</td>
+            <td>{{d.Location}}</td>
+            <td>{{d.When}}</td>
+            <td><a href="{{d['Event Website']}}">Click me</a></td>
+            <td><img ng-src="{{d['Event Image URL']}}" alt="Conference Images" height=30 width=50></td>
+        </tr>
+    </tbody>
+</table>
